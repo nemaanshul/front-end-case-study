@@ -1,0 +1,54 @@
+<div [ngClass]="{'item-info': true, 'hide-info': hideInfo}">
+   <span class="item-info__message">
+   Your item is added in the bag
+   </span>
+</div>
+<div class="bag-box">
+   <a
+      routerLink="/cart">
+      <ul class="nav navbar-nav">
+         <li class="dropdown">
+            <i class="fa fa-shopping-bag" style="font-size:30px;color:white"></i>
+            <span class="bag-box__count" *ngIf="cartService.totalItemsInCart > 0">
+            <span class="bag-box__counter">{{cartService.totalItemsInCart}}</span>
+            </span>
+         </li>
+      </ul>
+   </a>
+</div>
+<section class="wrapper">
+   <div class="wrapper__fostrap">
+      <div class="wrapper__content">
+         <div class="container">
+            <div class="row">
+               <fillmybag-product
+               *ngFor="let product of products"
+               [product]="product"
+               (callback)="openModal(template, product)"
+               (showInfo)="displayInfoBar()"
+               class="col-xs-12 col-sm-4">
+               </fillmybag-product>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<ng-template #template>
+   <div class="modal-header">
+      <h4 class="modal-title pull-left">{{productName}}</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+      </button>
+   </div>
+   <div class="modal-body">
+      <carousel>
+         <slide *ngFor="let image of productImages">
+            <img src="../assets/{{image}}.jpg" alt="First slide" style="display: block; width: 100%;">
+            <div class="carousel-caption d-none d-md-block">
+               <h3>First slide label</h3>
+               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div>
+         </slide>
+      </carousel>
+   </div>
+</ng-template>

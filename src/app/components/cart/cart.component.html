@@ -1,0 +1,156 @@
+<div class="container">
+   <div class="row">
+      <div class="col-sm-12 col-md-10 col-md-offset-1">
+         <div *ngIf="!products.length" class="empty-bag">
+            Your bag looks empty and sad. Go get some items in bag !
+            <figure class="empty-img">
+               <img src="../assets/empty.jpg" />
+            </figure>
+         </div>
+         <div *ngIf="productError" class="error-message">
+             <div class="information">You can buy only up to {{maxProducts}} unit(s) of this product</div>
+        </div>
+         <table 
+            *ngIf="products.length"
+            class="table table-hover">
+            <thead>
+               <tr>
+                  <th>Product</th>
+                  <th>Quantity</th>
+                  <th class="text-center">Price</th>
+                  <th class="text-center">Total</th>
+                  <th> </th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let product of products">
+                  <td class="col-sm-8 col-md-6">
+                     <div class="media">
+                        <a class="thumbnail pull-left" href="#">
+                        <img class="media-object" src="../assets/{{product._products[0]}}.jpg" style="width: 72px; height: 72px;"> </a>
+                        <div class="media-body description">
+                           <p class="media-heading">{{product.name}}</p>
+                        </div>
+                     </div>
+                  </td>
+                  <td class="col-sm-1 col-md-1" style="text-align: center">
+                     <span class="quantity-field">
+                     <input
+                     #quantity
+                     type="number"
+                     min=1
+                     [max]="product.quantity + product.itemsInCart"
+                     class="form-control-{{product.id}}"
+                     [ngModel]="product.itemsInCart"
+                     (keyup)="onValueChange(quantity.value, product)"
+                     (change)="onValueChange(quantity.value, product)">
+                     </span>
+                  </td>
+                  <td class="col-sm-1 col-md-1 text-center"><strong>{{product.price | currency:'GBP':symbol }}</strong></td>
+                  <td class="col-sm-1 col-md-1 text-center"><strong>{{product.price * product.itemsInCart | currency:'GBP':symbol }}</strong></td>
+                  <td class="col-sm-1 col-md-1">
+                     <button type="button" class="btn btn-danger" (click)="removeProduct(product)">
+                     <span class="glyphicon glyphicon-remove"></span> Remove
+                     </button>
+                  </td>
+               </tr>
+               <tr>
+                  <td>   </td>
+                  <td>   </td>
+                  <td>   </td>
+                  <td>
+                     <h5>Total Price</h5>
+                  </td>
+                  <td class="text-right">
+                     <h5><strong>{{ cartService.getTotalPrice() | currency:'GBP':symbol }}</strong></h5>
+                  </td>
+               </tr>
+               <tr>
+                  <td>   </td>
+                  <td>   </td>
+                  <td>   </td>
+                  <td>
+                     <h5>Voucher Discount</h5>
+                  </td>
+                  <td class="text-right">
+                     <h5><strong>{{ cartService.discountCard | currency:'GBP':symbol }}</strong></h5>
+                  </td>
+               </tr>
+               <tr>
+                  <td>   </td>
+                  <td>   </td>
+                  <td>   </td>
+                  <td>
+                     <h3>Net Total</h3>
+                  </td>
+                  <td class="text-right">
+                     <h3><strong>{{ netTotalPrice | currency:'GBP':symbol }}</strong></h3>
+                  </td>
+               </tr>
+               <tr>
+                  <td>   </td>
+                  <td>   </td>
+                  <td>   </td>
+                  <td>
+                  </td>
+                  <td>
+                     <button type="button" class="btn btn-success"  (click)="openModal(voucher)">
+                     Apply Voucher <span class="glyphicon glyphicon-play"></span>
+                     </button>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>
+<a class="warning back-button"
+   role="button" routerLink="/home">
+<i class="fa fa-angle-double-left"></i>
+<span>Continue Shopping</span></a>
+<ng-template #voucher>
+   <div class="modal-header">
+      <h4 class="modal-title pull-left">Select Voucher</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+      </button>
+   </div>
+   <div class="modal-body">
+      <div class="frb-group">
+         <div class="frb frb-success">
+            <input type="radio" id="radio-button-1" name="radio-button" value="1" (click)="selectVoucher(5)" [checked] = "cartService.discountCard === 5">
+            <label for="radio-button-1">
+            <span class="frb-title">£5.00 off on your purchase</span>
+            <span class="frb-description">Get immediate discount of £5.00 right now !</span>
+            </label>
+         </div>
+         <div [ngClass]="{'frb': true, 'frb-success': true, 'frb-disable': !cartService.isOfferValid('offer-10')}">
+            <input type="radio" id="radio-button-2" name="radio-button" value="2"
+            (click)="selectVoucher(10)"
+            [disabled] = "!cartService.isOfferValid('offer-10')"
+            [checked] = "cartService.discountCard === 10">
+            <label for="radio-button-2">
+            <span class="frb-title">£10.00 off on your purchase</span>
+            <span class="frb-description">To avail this offer you need to shop atleast £50.00 !</span>
+            </label>
+         </div>
+         <div [ngClass]="{'frb': true, 'frb-success': true, 'frb-disable': !cartService.isOfferValid('offer-15')}">
+            <input 
+            type="radio"
+            id="radio-button-3"
+            name="radio-button"
+            value="3"
+            (click)="selectVoucher(15)"
+            [disabled] = "!cartService.isOfferValid('offer-15')"
+            [checked] = "cartService.discountCard === 15">
+            <label for="radio-button-3">
+            <span class="frb-title">£15.00 off on your purchase</span>
+            <span class="frb-description">To avail this offer you need to shop minimum £75.00 and one footwear item!</span>
+            </label>
+         </div>
+      </div>
+      <button type="button" class="btn btn-success" (click)="hideVoucherModal()">
+      Confirm <span class="glyphicon glyphicon-play"></span>
+      </button>
+   </div>
+</ng-template>

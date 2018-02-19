@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+
+$midnight-blue: #205081;
+$white: #fff;
+
+.top-bar {
+    color: #fff;
+    top: 0;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 9;
+    background: #205081;
+    box-shadow: 0 1px 3px rgba(0,0,0,.08);
+    opacity: 0.9;
+  
+    ul {
+      background-color: transparent;
+      list-style: none;
+      margin-top: 6px;
+      }
+  }
+
+  @media (min-width: 760px) {
+ .modal.show .modal-dialog {
+    max-width: 720px;
+  }
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 60px;
+  width: 60px;
+  //outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  background-color: lightgray;
+  // border: 1px solid black;
+  background-image: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.carousel-control-next-icon:after {
+  content: '>';
+  font-size: 35px;
+  color: #fff;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 35px;
+  color: #fff;
+}

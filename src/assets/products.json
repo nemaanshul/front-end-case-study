@@ -1,0 +1,223 @@
+[
+	{
+		"discounted_price": null,
+		"id": 1,
+		"itemsInCart": 0,
+		"name": "Almond Toe Court Shoes, Patent Black",
+		"price": 99,
+		"product_category": "footwear",
+		"quantity": 5,
+		"sub_category": "women",
+		"_products": [
+			"product-1.1",
+			"product-1.2",
+			"product-1.3",
+			"product-1.4",
+			"product-1.5"
+		]
+	},
+	{
+		"discounted_price": null,
+		"id": 2,
+		"itemsInCart": 0,
+		"name": "Suede Shoes, Blue",
+		"price": 42,
+		"product_category": "footwear",
+		"quantity": 5,
+		"sub_category": "women",
+		"_products": [
+			"product-2.1",
+			"product-2.2",
+			"product-2.3",
+			"product-2.4",
+			"product-2.5"
+		]
+	},
+	{
+		"discounted_price": null,
+		"id": 3,
+		"itemsInCart": 0,
+		"name": "Leather Driver Saddle Loafers, Tan",
+		"price": 99,
+		"product_category": "footwear",
+		"quantity": 5,
+		"sub_category": "men",
+		"_products": [
+			"product-3.1",
+			"product-3.2",
+			"product-3.3",
+			"product-3.4",
+			"product-3.5"
+		]
+	},
+	{
+		"discounted_price": null,
+		"id": 4,
+		"itemsInCart": 0,
+		"name": "Flip Flops, Red",
+		"price": 19,
+		"product_category": "footwear",
+		"sub_category": "men",
+		"quantity": 6,
+		"_products": [
+			"product-4.1",
+			"product-4.2",
+			"product-4.3",
+			"product-4.4",
+			"product-4.5"
+		]
+	},
+	{
+		"discounted_price": null,
+		"id": 5,
+		"itemsInCart": 0,
+		"name": "Flip Flops, Blue",
+		"price": 19,
+		"product_category": "footwear",
+		"sub_category": "men",
+		"quantity": 0,
+		"_products": [
+			"product-5.1",
+			"product-5.2",
+			"product-5.3",
+			"product-5.4",
+			"product-5.5"
+		]
+	},
+	{
+		"discounted_price": null,
+		"id": 6,
+		"itemsInCart": 0,
+		"name": "Gold Button Cardigan, Black",
+		"price": 167,
+		"product_category": "casual",
+		"sub_category": "women",
+		"quantity": 6,
+		"_products": [
+			"product-6.1",
+			"product-6.2",
+			"product-6.3",
+			"product-6.4",
+			"product-6.5"
+		]
+	},
+	{
+		"discounted_price": null,
+		"id": 7,
+		"itemsInCart": 0,
+		"name": "Cotton Shorts, Medium Red",
+		"price": 30,
+		"product_category": "casual",
+		"quantity": 5,
+		"sub_category": "women",
+		"_products": [
+			"product-7.1",
+			"product-7.2",
+			"product-7.3",
+			"product-7.4",
+			"product-7.5"
+		]
+	},
+	{
+		"discounted_price": null,
+		"id": 8,
+		"itemsInCart": 0,
+		"name": "Fine Stripe Short Sleeve Shirt, Grey",
+		"price": 49,
+		"quantity": 9,
+		"product_category": "casual",
+		"sub_category": "men",
+		"_products": [
+			"product-8.1",
+			"product-8.2",
+			"product-8.3",
+			"product-8.4",
+			"product-8.5"
+		]
+	},
+	{
+		"discounted_price": 39,
+		"id": 9,
+		"itemsInCart": 0,
+		"name": "Fine Stripe Short Sleeve Shirt, Green",
+		"price": 49,
+		"quantity": 3,
+		"product_category": "casual",
+		"sub_category": "men",
+		"_products": [
+			"product-9.1",
+			"product-9.2",
+			"product-9.3",
+			"product-9.4",
+			"product-9.5"
+		]
+	},
+	{
+		"discounted_price": null,
+		"id": 10,
+		"itemsInCart": 0,
+		"name": "Sharkskin Waistcoat, Charcoal",
+		"price": 75,
+		"product_category": "formal",
+		"quantity": 2,
+		"sub_category": "men",
+		"_products": [
+			"product-10.1",
+			"product-10.2",
+			"product-10.3",
+			"product-10.4",
+			"product-10.5"
+		]
+	},
+	{
+		"discounted_price": null,
+		"id": 11,
+		"itemsInCart": 0,
+		"name": "Lightweight Patch Pocket Blazer, Deer",
+		"price": 175,
+		"product_category": "formal",
+		"quantity": 1,
+		"sub_category": "men",
+		"_products": [
+			"product-11.1",
+			"product-11.2",
+			"product-11.3",
+			"product-11.4",
+			"product-11.5"
+		]
+	},
+	{
+		"discounted_price": null,
+		"id": 12,
+		"itemsInCart": 0,
+		"name": "Bird Print Dress, Black",
+		"price": 270,
+		"product_category": "formal",
+		"quantity": 10,
+		"sub_category": "women",
+		"_products": [
+			"product-12.1",
+			"product-12.2",
+			"product-12.3",
+			"product-12.4",
+			"product-12.5"
+		]
+	},
+	{
+		"discounted_price": null,
+		"id": 13,
+		"itemsInCart": 0,
+		"name": "Mid Twist Cut-Out Dress, Pink",
+		"price": 540,
+		"product_category": "formal",
+		"quantity": 5,
+		"sub_category": "women",
+		"_products": [
+			"product-13.1",
+			"product-13.2",
+			"product-13.3",
+			"product-13.4",
+			"product-13.5"
+		]
+	}
+]
